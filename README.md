@@ -1,2 +1,2 @@
-# JohnBryce-projects-
+# JohnBryce-projects + Personal projects
 FullStack Projects
