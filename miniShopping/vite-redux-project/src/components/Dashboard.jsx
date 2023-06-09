@@ -1,6 +1,6 @@
 
 import React from "react";
-import Product from "./product";
+import Product from "./Product";
 
 const Dashboard = () => {
     return (
@@ -8,7 +8,6 @@ const Dashboard = () => {
             <div className="container">
                 <Product />
             </div>
-
         </>
     );
 };

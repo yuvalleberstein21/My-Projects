@@ -3,8 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import { useDispatch } from 'react-redux';
 import { remove } from '../store/cartSlice';
-import { useEffect } from "react";
-import Alert from "react-bootstrap/Alert";
+
 
 const Cart = () => {
     const dispatch = useDispatch()
@@ -13,9 +12,6 @@ const Cart = () => {
     if (products.length === 0) {
         return <h3 className="d-flex justify-content-center mt-5">Bag is empty...</h3>
     }
-
-
-
 
     const removeToCart = (id) => {
         dispatch(remove(id));

@@ -7,7 +7,6 @@ const RootLayout = () => {
         <>
             <Provider store={store}>
                 <NavbarPanel />
-
                 <main>
                     <Outlet />
                 </main>

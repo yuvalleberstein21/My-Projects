@@ -12,7 +12,6 @@ const NavbarPanel = () => {
 
     const cartProducts = useSelector(state => state.cart);
 
-
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
