@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Roboto+Condensed:ital,wght@0,400;1,300&family=Rubik:ital,wght@1,300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: 'Rubik', sans-serif;
+  /* font-family: 'Bodoni Moda', serif; */
+  /* font-family: 'Roboto Condensed', sans-serif; */
+}
