@@ -51,7 +51,7 @@ const ProductDetails = () => {
                     </MDBCard>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 

@@ -27,3 +27,7 @@ body {
   height: 200px !important;
   cursor: pointer;
 }
+.card-cart {
+  border: none;
+  background-color: rgba(227, 227, 227, 0.407);
+}

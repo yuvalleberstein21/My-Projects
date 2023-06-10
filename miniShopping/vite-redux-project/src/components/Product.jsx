@@ -13,14 +13,22 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
+
 const Product = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const { data: products, status } = useSelector(state => state.products);
 
+    const [filter, setFilter] = useState([]);
+
     useEffect(() => {
         dispatch(getProducts());
     }, []);
+
+    useEffect(() => {
+        setFilter(products);
+    }, [products]);
 
     if (status === statusCode.ERROR) {
         return <Alert key="danger" variant="danger">Something went wrong ! Please try again later..</Alert>
@@ -35,9 +43,29 @@ const Product = () => {
     }
 
 
+
+    const filterProduct = (category) => {
+        if (category === 'all') {
+            setFilter(products);
+        }
+        else {
+            const updatedList = products.filter((x) => x.category === category);
+            setFilter(updatedList);
+        }
+    };
+
+
+
     return (
         <>
             <h1 className="d-flex justify-content-center align-items-center title mt-3">Our Products</h1>
+            <div className="buttons d-flex justify-content-center mt-5 mb-3 pb-3">
+                <button className="btn btn-outline-dark me-2" onClick={() => filterProduct('all')}>All</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("women's clothing")}>Women's Clothing</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("electronics")}>Electronic</button>
+            </div>
 
             <div className="align-items-center d-flex justify-content-center loading">
                 {status === statusCode.LOADING &&
@@ -46,12 +74,13 @@ const Product = () => {
                     </MDBSpinner>
                 }
             </div>
+
+
             <div className="row mt-5">
-                {products.map(product => (
+                {filter.map(product => (
                     <div key={product.id} className="col-md-3 gap-2" style={{ marginBottom: '25px' }}>
                         <Card className="h-100" sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' }}>
                             <CardOverflow>
-
                                 <img
                                     className="product-image"
                                     src={product.image}
@@ -78,11 +107,12 @@ const Product = () => {
                                 </Button>
                             </CardOverflow>
                         </Card>
-
                     </div>
                 ))}
             </div>
+
         </>
+
     );
 };
 

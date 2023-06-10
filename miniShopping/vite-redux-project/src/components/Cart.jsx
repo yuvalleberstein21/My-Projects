@@ -5,12 +5,13 @@ import { useDispatch } from 'react-redux';
 import { remove } from '../store/cartSlice';
 
 
+
 const Cart = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.cart);
 
     if (products.length === 0) {
-        return <h3 className="d-flex justify-content-center mt-5">Bag is empty...</h3>
+        return <h3 className="d-flex justify-content-center mt-5">You'r cart is empty...</h3>
     }
 
     const removeToCart = (id) => {
@@ -22,7 +23,7 @@ const Cart = () => {
             <div className="row">
                 {products.map(product => (
                     <div key={product.id} className="col-md-12" style={{ marginBottom: '10px' }}>
-                        <Card key={product.id} className="h-100">
+                        <Card key={product.id} className="h-100 card-cart">
                             <div className="text-center">
                                 <Card.Img variant="top" src={product.image} style={{ width: '100px', height: '130px' }} />
                             </div>
