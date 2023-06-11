@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import { useDispatch } from 'react-redux';
 import { remove } from '../store/cartSlice';
+import ListGroup from 'react-bootstrap/ListGroup';
 import {
     MDBCard,
     MDBCardTitle,
@@ -15,9 +16,12 @@ import {
 
 
 
+
 const Cart = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.cart);
+
+
 
     if (products.length === 0) {
         return <h3 className="d-flex justify-content-center mt-5">You'r cart is empty...</h3>
@@ -29,13 +33,15 @@ const Cart = () => {
 
     return (
         <>
+
+
             <div className="container py-4">
-                <div className="row py-4">
+                <div className="row">
                     {products.map(product => (
-                        <div key={product.id} style={{ marginBottom: '10px' }}>
-                            <MDBCard className="col-md-12" style={{ maxWidth: '100%' }}>
-                                <MDBRow className='g-0'>
-                                    <MDBCol md='4' style={{ height: "300px" }}>
+                        <div key={product.id} className="col-md-12" style={{ marginBottom: '10px' }}>
+                            <MDBCard style={{ maxWidth: '100%', borderRadius: '10px' }}>
+                                <MDBRow>
+                                    <MDBCol md='4'>
                                         <MDBCardImage style={{ height: "250px", width: "400px" }} src={product.image} alt='...' fluid />
                                     </MDBCol>
                                     <MDBCol md='8'>
@@ -56,6 +62,7 @@ const Cart = () => {
                     ))}
                 </div>
             </div>
+
         </>
     )
 };

@@ -42,6 +42,14 @@ body {
 .cart-description {
   color: rgb(157, 157, 157);
 }
+.cardCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009688;
+  height: 700px;
+}
+
 .title {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.699);
