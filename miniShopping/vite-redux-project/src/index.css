@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Roboto+Condensed:ital,wght@0,400;1,300&family=Rubik:ital,wght@1,300&display=swap');
-* {
+*::selection {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #ffffff;
+  color: #009688;
 }
 body {
   margin: 0;
@@ -10,8 +12,35 @@ body {
   box-sizing: border-box;
   height: 100vh;
   font-family: 'Rubik', sans-serif !important;
-  /* font-family: 'Bodoni Moda', serif; */
-  /* font-family: 'Roboto Condensed', sans-serif; */
+  background-color: #f8f6f6;
+}
+.fa-star {
+  color: rgb(226, 173, 25);
+}
+.navbar {
+  background-color: #d9d9d97d;
+  box-shadow: 1px sandybrown;
+}
+.nav-link:hover {
+  color: #009688 !important;
+}
+.brand-navbar {
+  color: #009688 !important;
+  font-weight: bold !important;
+  font-weight: 500 !important;
+  font-size: large !important;
+}
+.nav-link {
+  padding-bottom: 2px;
+  font-weight: bold !important;
+  font-weight: 200 !important;
+  font-size: medium !important;
+}
+.carousel-inner {
+  border-radius: 10px !important;
+}
+.cart-description {
+  color: rgb(157, 157, 157);
 }
 .title {
   font-weight: bold;
@@ -30,4 +59,35 @@ body {
 .card-cart {
   border: none;
   background-color: rgba(227, 227, 227, 0.407);
+}
+
+/* ---MEDIA---- */
+@media (max-width: 767px) {
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3;
+    align-content: center;
+    max-width: 100%;
+  }
+  .buttons .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem;
+    margin: 2px;
+    width: 100%;
+  }
+  .card-product {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 653px) {
+  .buttons {
+    flex-direction: column;
+  }
+  .buttons .btn {
+    margin-bottom: 5px;
+  }
 }

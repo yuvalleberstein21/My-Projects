@@ -13,16 +13,19 @@ const NavbarPanel = () => {
     const cartProducts = useSelector(state => state.cart);
 
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar className='navbar' expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">MiniShopping</Navbar.Brand>
+                <Navbar.Brand className="brand-navbar" href="#">MiniShopping</Navbar.Brand>
+                <Nav className='nav'>
+                    <Nav.Link className="nav-link" to="/" as={Link}>Home</Nav.Link>
+                </Nav>
                 <Nav>
-                    <Nav.Link to="/" as={Link}>Products</Nav.Link>
+                    <Nav.Link className="nav-link" to="/products" as={Link}>Products</Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        <Nav.Link to="/cart" as={Link}><FontAwesomeIcon icon={faCartShopping} /> ({cartProducts.length})</Nav.Link>
+                        <Nav.Link className="nav-link" to="/cart" as={Link}><FontAwesomeIcon icon={faCartShopping} /> ({cartProducts.length})</Nav.Link>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>

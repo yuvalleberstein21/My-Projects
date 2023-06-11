@@ -3,6 +3,15 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import { useDispatch } from 'react-redux';
 import { remove } from '../store/cartSlice';
+import {
+    MDBCard,
+    MDBCardTitle,
+    MDBCardText,
+    MDBCardBody,
+    MDBCardImage,
+    MDBRow,
+    MDBCol
+} from 'mdb-react-ui-kit';
 
 
 
@@ -19,32 +28,35 @@ const Cart = () => {
     }
 
     return (
-        <div className="container">
-            <div className="row">
-                {products.map(product => (
-                    <div key={product.id} className="col-md-12" style={{ marginBottom: '10px' }}>
-                        <Card key={product.id} className="h-100 card-cart">
-                            <div className="text-center">
-                                <Card.Img variant="top" src={product.image} style={{ width: '100px', height: '130px' }} />
-                            </div>
-                            <Card.Body>
-                                <Card.Title>{product.title}</Card.Title>
-                                <Card.Text>
-                                    {product.qty} X ${product.price} = $
-                                    {product.qty * product.price}
-                                </Card.Text>
-                            </Card.Body>
-                            <Card.Footer style={{ background: 'white' }}>
-                                <div className="d-flex justify-content-center">
-                                    <Button variant="danger" onClick={() => removeToCart(product)}>Remove Item</Button>
-                                </div>
-                            </Card.Footer>
-                        </Card>
-                    </div>
-
-                ))}
+        <>
+            <div className="container py-4">
+                <div className="row py-4">
+                    {products.map(product => (
+                        <div key={product.id} style={{ marginBottom: '10px' }}>
+                            <MDBCard className="col-md-12" style={{ maxWidth: '100%' }}>
+                                <MDBRow className='g-0'>
+                                    <MDBCol md='4' style={{ height: "300px" }}>
+                                        <MDBCardImage style={{ height: "250px", width: "400px" }} src={product.image} alt='...' fluid />
+                                    </MDBCol>
+                                    <MDBCol md='8'>
+                                        <MDBCardBody>
+                                            <MDBCardTitle>{product.title}</MDBCardTitle>
+                                            <MDBCardText className="cart-description">
+                                                {product.description}
+                                            </MDBCardText>
+                                            <MDBCardText className="fw-bold">{product.qty} X ${product.price} = $ {product.qty * product.price}</MDBCardText>
+                                            <div className="d-flex justify-content-center">
+                                                <Button variant="danger" onClick={() => removeToCart(product)}>Remove Item</Button>
+                                            </div>
+                                        </MDBCardBody>
+                                    </MDBCol>
+                                </MDBRow>
+                            </MDBCard>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     )
 };
 
