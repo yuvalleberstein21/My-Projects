@@ -14,8 +14,8 @@ const Cart = () => {
         return <h3 className="d-flex justify-content-center mt-5">You'r cart is empty...</h3>
     }
 
-    const removeToCart = (id) => {
-        dispatch(remove(id));
+    const removeToCart = (item) => {
+        dispatch(remove(item));
     }
 
     return (
@@ -30,12 +30,13 @@ const Cart = () => {
                             <Card.Body>
                                 <Card.Title>{product.title}</Card.Title>
                                 <Card.Text>
-                                    $ {product.price}
+                                    {product.qty} X ${product.price} = $
+                                    {product.qty * product.price}
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer style={{ background: 'white' }}>
                                 <div className="d-flex justify-content-center">
-                                    <Button variant="danger" onClick={() => removeToCart(product.id)}>Remove Item</Button>
+                                    <Button variant="danger" onClick={() => removeToCart(product)}>Remove Item</Button>
                                 </div>
                             </Card.Footer>
                         </Card>

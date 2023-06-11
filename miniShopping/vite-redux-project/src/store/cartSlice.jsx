@@ -7,16 +7,43 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         add(state, action) {
-            state.push(action.payload)
+            const product = action.payload;
+            const exist = state.find((x) => x.id === product.id);
+
+            if (exist) {
+                // Increase the Quantity
+                return state.map((x) =>
+                    x.id === product.id ? { ...x, qty: x.qty + 1 } : x
+                );
+            } else {
+                return [
+                    ...state,
+                    {
+                        ...product,
+                        qty: 1,
+                    }
+                ];
+            }
 
         },
 
         remove(state, action) {
-            return state.filter(item => item.id !== action.payload)
+            const product = action.payload;
+            const exist = state.find((x) => x.id === product.id);
+
+            if (exist.qty === 1) {
+                return state.filter((x) => x.id !== exist.id);
+            } else {
+                return state.map((x) =>
+                    x.id === product.id ? { ...x, qty: x.qty - 1 } : x
+                );
+            }
 
         }
     }
 });
+
+
 
 export const { add, remove } = cartSlice.actions;
 export default cartSlice.reducer;
