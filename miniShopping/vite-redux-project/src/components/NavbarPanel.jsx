@@ -15,7 +15,7 @@ const NavbarPanel = () => {
     return (
         <Navbar className='navbar' expand="lg">
             <Container fluid>
-                <Navbar.Brand className="brand-navbar" href="#">MiniShopping</Navbar.Brand>
+                <Navbar.Brand><Nav.Link className="brand-navbar" to="/" as={Link}> MiniShopping</Nav.Link></Navbar.Brand>
                 <Nav className='nav'>
                     <Nav.Link className="nav-link" to="/" as={Link}>Home</Nav.Link>
                 </Nav>
@@ -25,7 +25,7 @@ const NavbarPanel = () => {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        <Nav.Link className="nav-link" to="/cart" as={Link}><FontAwesomeIcon icon={faCartShopping} /> ({cartProducts.length})</Nav.Link>
+                        <Nav.Link className="nav-link cart-brand" to="/cart" as={Link}><FontAwesomeIcon icon={faCartShopping} /> ({cartProducts.length})</Nav.Link>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>

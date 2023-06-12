@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink, useLocation } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { add } from "../store/cartSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 const ProductDetails = () => {
 
@@ -21,6 +23,10 @@ const ProductDetails = () => {
             <div className="row py-4">
                 <div className="col-md-6">
                     <img src={product.image} alt={product.title} height="400px" width="400px" />
+                    <p className="py-5">
+                        <NavLink to="/products" className="btn btn-dark"><FontAwesomeIcon icon={faArrowLeft} />Go To Shop</NavLink>
+                    </p>
+
                 </div>
                 <div className="col-md-6">
                     <h4 className="text-uppercase text-black-50">
@@ -43,7 +49,7 @@ const ProductDetails = () => {
                     </NavLink>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

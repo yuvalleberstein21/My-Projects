@@ -1,5 +1,4 @@
 import React from "react";
-import Product from "./Product";
 import image1 from "../assets/images/img1.jpg";
 import image2 from "../assets/images/macbook-air.jpeg";
 import image3 from "../assets/images/img3.jpg";
@@ -10,8 +9,15 @@ const Home = () => {
 
     return (
         <>
-            <div className="row">
-                <div className="mt-5">
+            <div className="row py-5">
+                <div className="mt-5 col-md-6 py-3">
+                    <h1 className="home-title">My Mini Shopping By React | Redux</h1>
+                    <div className="buttons d-flex justify-content-center mt-5 mb-3 pb-3">
+                        <button className="btn btn-dark"><NavLink className="btn-home me-2" to="/products">GO SHOPPING</NavLink></button>
+                    </div>
+                </div>
+
+                <div className="mt-5 col-md-6">
                     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -42,10 +48,8 @@ const Home = () => {
                             <span className="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <div className="buttons d-flex justify-content-center mt-5 mb-3 pb-3">
-                        <NavLink className="btn btn-outline-dark me-2" to="/products">GO SHOPPING</NavLink>
 
-                    </div>
+
                 </div>
             </div>
 
