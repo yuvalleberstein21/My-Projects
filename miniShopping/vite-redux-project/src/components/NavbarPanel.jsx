@@ -30,6 +30,7 @@ const NavbarPanel = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+
     );
 };
 

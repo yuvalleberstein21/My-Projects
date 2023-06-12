@@ -21,7 +21,8 @@ body {
   line-height: 86.4px;
   text-shadow: 0 2px 4px rgba(13, 0, 77, 0.08), 0 3px 6px rgba(13, 0, 77, 0.08),
     0 8px 16px rgba(13, 0, 77, 0.08);
-  font-family: Poppins, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 700;
   text-rendering: optimizeLegibility;
 }

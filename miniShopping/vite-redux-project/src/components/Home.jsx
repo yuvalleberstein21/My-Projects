@@ -10,6 +10,7 @@ const Home = () => {
     return (
         <>
             <div className="row py-5">
+
                 <div className="mt-5 col-md-6 py-3">
                     <h1 className="home-title">My Mini Shopping By React | Redux</h1>
                     <div className="buttons d-flex justify-content-center mt-5 mb-3 pb-3">
@@ -48,9 +49,8 @@ const Home = () => {
                             <span className="visually-hidden">Next</span>
                         </button>
                     </div>
-
-
                 </div>
+
             </div>
 
 
