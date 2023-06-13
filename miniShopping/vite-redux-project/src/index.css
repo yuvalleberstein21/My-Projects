@@ -26,6 +26,16 @@ body {
   font-weight: 700;
   text-rendering: optimizeLegibility;
 }
+.image-home-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+.image-home {
+  object-fit: cover;
+}
 .btn-home {
   text-decoration: none;
   color: white;

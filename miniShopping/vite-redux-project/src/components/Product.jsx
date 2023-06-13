@@ -24,6 +24,7 @@ const Product = () => {
 
     useEffect(() => {
         dispatch(getProducts());
+
     }, []);
 
     useEffect(() => {
@@ -36,6 +37,16 @@ const Product = () => {
 
     const addToCart = (product) => {
         dispatch(add(product))
+
+        // // Get the existing cart items from local storage or initialize an empty array
+        // const existingItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // // Add the new product to the existing items array
+        // const updatedItems = [...existingItems, product];
+
+        // // Update the local storage with the updated items array
+        // localStorage.setItem('cartItems', JSON.stringify(updatedItems));
+
     }
 
     const handleSubmit = (product) => {

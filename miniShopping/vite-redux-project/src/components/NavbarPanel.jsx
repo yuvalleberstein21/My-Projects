@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { useEffect, useState } from 'react';
 
 
 const NavbarPanel = () => {
 
     const cartProducts = useSelector(state => state.cart);
+
 
     return (
         <Navbar className='navbar' expand="lg">
