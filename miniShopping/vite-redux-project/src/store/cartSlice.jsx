@@ -12,17 +12,22 @@ const cartSlice = createSlice({
 
             if (exist) {
                 // Increase the Quantity
-                return state.map((x) =>
+                const updateState = state.map((x) =>
                     x.id === product.id ? { ...x, qty: x.qty + 1 } : x
                 );
+                localStorage.setItem('cart', JSON.stringify(updateState));
+                return updateState;
+
             } else {
-                return [
+                const updatedState = [
                     ...state,
                     {
                         ...product,
                         qty: 1,
                     }
                 ];
+                localStorage.setItem('cart', JSON.stringify(updatedState));
+                return updatedState;
             }
 
         },
@@ -32,11 +37,16 @@ const cartSlice = createSlice({
             const exist = state.find((x) => x.id === product.id);
 
             if (exist.qty === 1) {
-                return state.filter((x) => x.id !== exist.id);
+                const updatedState = state.filter((x) => x.id !== exist.id);
+                localStorage.setItem('cart', JSON.stringify(updatedState));
+                return updatedState;
+
             } else {
-                return state.map((x) =>
-                    x.id === product.id ? { ...x, qty: x.qty - 1 } : x
-                );
+                const updatedState = state.map((x) =>
+                    x.id === product.id ? { ...x, qty: x.qty - 1 } : x);
+                localStorage.setItem('cart', JSON.stringify(updatedState));
+                return updatedState;
+
             }
 
         }
